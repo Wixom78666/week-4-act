@@ -2,10 +2,12 @@
 
 var questAns = document.querySelector("#gameBox");
 var startBtn = document.querySelector("#ignition");
-var tik = document.querySelector("#tiktok");
+var tik = document.querySelector("#tikTok");
 var wrap = document.querySelector("#perim");
 var points = 0;
 var whichQues = 0;
+var beginning = 0;
+var remainTime = 60;
 
 var preguntas = [
     {
@@ -35,4 +37,13 @@ var preguntas = [
     }
 ];
 
+startBtn.addEventListener("click", function () {
+    if (beginning === 0) {
+        beginning = setInterval(function () {
+            remainTime--;
+            tik.textContent = remainTime;
+
+        }, 1000);
+    }
+});
 
